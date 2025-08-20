@@ -5,36 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subhra Jyoti Mishra - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2C0735; /* Very deep, dark purple/indigo - almost black, like deep space */
-            --secondary-color: #5A189A; /* Rich, vibrant purple - for main accents, major elements */
-            --accent-color: #FF6EC7; /* Bright, striking fuchsia/pink - for floral highlights, interactive elements */
-            --text-color-dark: #212121; /* Dark grey for text on light backgrounds */
-            --text-color-light: #E0E0E0; /* Light grey for text on dark backgrounds */
-            --background-body: #200525; /* Dark cosmic background for body */
-            --section-bg-light: #FFFFFF; /* Pure white for default section backgrounds */
-            --code-bg: #2D2D2D; /* Dark background for code-like elements/skill cards */
-            --border-color: #9C27B0; /* Medium purple for borders/dividers */
-
-            /* Subtle SVG patterns for themes (more complex for visual interest) */
-            --star-bg-layer1: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="10" cy="10" r="1.5" fill="%23fff" opacity="0.1"/><circle cx="50" cy="60" r="1" fill="%23fff" opacity="0.15"/><circle cx="90" cy="20" r="0.8" fill="%23fff" opacity="0.08"/></svg>');
-            --star-bg-layer2: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><circle cx="20" cy="120" r="0.7" fill="%23fff" opacity="0.05"/><circle cx="180" cy="40" r="1.2" fill="%23fff" opacity="0.08"/><circle cx="70" cy="170" r="0.9" fill="%23fff" opacity="0.06"/></svg>');
-            --circuit-bg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><path d="M0 0h50v50H0z" fill="none"/><path d="M0 5h50M0 15h50M0 25h50M0 35h50M0 45h50M5 0v50M15 0v50M25 0v50M35 0v50M45 0v50" stroke="%23B2EBF2" stroke-width="0.2" opacity="0.5"/></svg>');
-            --growth-bg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="25" cy="25" r="3" fill="%23A7FFEB" opacity="0.2"/><circle cx="75" cy="75" r="3" fill="%23A7FFEB" opacity="0.2"/><line x1="25" y1="25" x2="75" y2="75" stroke="%23A7FFEB" stroke-width="0.5" opacity="0.1"/></svg>');
-            --geometric-bg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect x="0" y="0" width="10" height="10" fill="%23E1BEE7" opacity="0.1"/><rect x="50" y="50" width="10" height="10" fill="%23E1BEE7" opacity="0.1"/></svg>');
-        }
-
-        /* Animations for the starry background */
-        @keyframes star-scroll-slow {
-            from { background-position: 0 0; }
-            to { background-position: 100vw 100vh; } /* Moves diagonally */
-        }
-
-        @keyframes star-scroll-fast {
-            from { background-position: 0 0; }
-            to { background-position: -100vw -100vh; } /* Moves diagonally in opposite direction */
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --text-color: #333;
+            --background-color: #f4f7f6;
         }
 
         * {
@@ -44,17 +21,10 @@
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: var(--text-color-dark);
-            background-color: var(--background-body);
-            /* Applying two layers of starry background with animations */
-            background-image: var(--star-bg-layer1), var(--star-bg-layer2);
-            background-size: 100px 100px, 200px 200px; /* Different sizes for parallax effect */
-            background-repeat: repeat;
-            background-blend-mode: screen; /* Brighter blend for stars */
-            animation: star-scroll-slow 120s linear infinite, star-scroll-fast 80s linear infinite; /* Apply both animations */
-            opacity: 1; /* Full opacity for the body */
+            color: var(--text-color);
+            background-color: var(--background-color);
         }
 
         .container {
@@ -67,557 +37,296 @@
         .profile-header {
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--text-color-light);
-            padding: 2.5rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
             margin-bottom: 2rem;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
-        
-        .profile-header .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .profile-header nav {
-            margin-top: 1.5rem;
-        }
-
-        .profile-header nav a {
-            color: var(--text-color-light);
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: 600;
-            transition: color 0.3s ease, transform 0.2s ease;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .profile-header nav a:hover {
-            color: var(--accent-color);
-            transform: translateY(-2px);
-        }
-        
-        .profile-header nav a.personal-btn {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 6px 14px; /* Slightly smaller padding */
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .profile-header nav a.personal-btn:hover {
-            background-color: #ff80a6; /* Slightly lighter accent */
-            transform: scale(1.08) translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
 
         .profile-picture {
-            width: 180px; /* Slightly smaller for better balance */
-            height: 180px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid var(--accent-color); /* Accent border */
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 0 8px rgba(255,255,255,0.2), 0 0 0 12px rgba(255,255,255,0.1); /* Layered glow */
-            transition: transform 0.3s ease;
-        }
-        .profile-picture:hover {
-            transform: scale(1.05);
+            border: 5px solid white;
+            margin-right: 2rem;
         }
 
         .profile-intro {
-            text-align: center;
+            flex-grow: 1;
         }
 
         .profile-intro h1 {
-            font-size: 3rem; /* Larger heading */
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-color-light);
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-        }
-        .profile-intro p {
-            color: var(--text-color-light);
-            opacity: 0.9;
         }
 
         .section {
-            background-color: var(--section-bg-light);
-            margin-bottom: 2.5rem; /* More space between sections */
-            padding: 2.5rem;
-            border-radius: 15px; /* More rounded corners */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Stronger shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(var(--border-color), 0.1); /* Subtle border */
-        }
-        
-        /* Themed background patterns for sections with blending */
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-repeat: repeat;
-            background-size: 80px 80px; /* Adjust size for subtlety */
-            opacity: 0.05; /* Very subtle pattern */
-            z-index: 0;
-        }
-
-        #about::before {
-            background-image: var(--growth-bg);
-            background-size: 100px 100px;
-            background-blend-mode: multiply;
-            opacity: 0.1;
-        }
-        
-        #projects::before, #publications::before {
-            background-image: var(--circuit-bg);
-            background-size: 80px 80px;
-            background-blend-mode: luminosity;
-            opacity: 0.08;
-        }
-        
-        #skills::before, #certifications::before {
-            background-image: var(--geometric-bg);
-            background-size: 100px 100px;
-            background-blend-mode: darken;
-            opacity: 0.07;
-        }
-        
-        /* Personal section will have its own direct background */
-        #personal {
-             background: linear-gradient(135deg, #fce4ec 0%, #fffde7 100%); /* Soft floral gradient */
-             /* No ::before pseudo-element for personal to allow direct gradient */
-        }
-
-        .section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            background-color: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .section-title {
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 0.8rem;
-            margin-bottom: 2rem;
-            color: var(--secondary-color);
-            font-size: 2.2rem;
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .skills-grid, .certificates-grid, .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.8rem; /* Increased gap */
-        }
-        
-        .hobbies-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .hobbies-list li {
-            background: rgba(255, 255, 255, 0.8); /* Soft white with transparency for readability */
-            padding: 1.8rem; /* More padding */
-            border-radius: 12px; /* More rounded */
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hobbies-list li:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        
-        .hobbies-list li i {
-            margin-right: 20px; /* More space */
-            color: var(--secondary-color);
-            font-size: 2.2rem; /* Larger icon */
-            opacity: 0.8;
-        }
-        .hobbies-list li strong {
-            color: var(--primary-color);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
         }
 
         .skill-card, .certificate-card, .service-card {
-            background-color: var(--section-bg-light); /* Changed to white for better visibility */
-            padding: 2rem; /* More padding */
-            border-radius: 10px;
+            background-color: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 8px;
             text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-            border: 1px solid rgba(var(--secondary-color), 0.2); /* Lighter border */
-            color: var(--text-color-dark); /* Ensure text is readable on light cards */
+            transition: transform 0.3s ease;
         }
 
         .skill-card:hover, .certificate-card:hover, .service-card:hover {
-            transform: translateY(-12px) scale(1.03); /* More pronounced hover */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            background: linear-gradient(135deg, var(--section-bg-light), #f0f0f0); /* Subtle gradient on hover */
+            transform: translateY(-10px);
         }
 
         .skill-card i, .certificate-card i, .service-card i {
-            font-size: 3rem; /* Larger icons */
+            font-size: 2.5rem;
             color: var(--secondary-color);
-            margin-bottom: 1.2rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-        }
-        .skill-card h3, .certificate-card h3, .service-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .publication-item {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Light blue gradient */
-            padding: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease;
-        }
-        .publication-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-        }
-        .publication-item h3 {
-            color: var(--primary-color);
-            font-family: 'Montserrat', sans-serif;
-            margin-bottom: 0.5rem;
-        }
-        .publication-item a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        .publication-item a:hover {
-            color: var(--accent-color);
-            text-decoration: underline;
+            background-color: var(--background-color);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
         }
 
-        .contact-form {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            color: var(--text-color-light);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .contact-form .section-title {
-            color: var(--text-color-light);
-            border-color: var(--accent-color);
-        }
-        .contact-form input,
+        .contact-form input, 
         .contact-form textarea {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: var(--text-color-dark);
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-        }
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: #888;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
 
         .contact-form button {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
+            background-color: var(--primary-color);
+            color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            font-size: 1.2rem;
-            font-weight: 700;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
         }
 
         .contact-form button:hover {
-            background-color: #ff80a6;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-        
-        .reward-link-container {
-            text-align: center;
-            margin-top: 4rem; /* More space */
-            padding: 2.5rem;
-            background: linear-gradient(135deg, #e0f7fa, #fffde7); /* Very light, soft gradient for reward */
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-            margin-bottom: 40px; /* Space from bottom of page */
-            border: 1px solid rgba(var(--accent-color), 0.3);
-        }
-        
-        .reward-link {
-            color: var(--secondary-color); /* Primary color for the link */
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.4rem; /* Larger font */
-            transition: color 0.3s ease, transform 0.2s ease;
-            display: inline-block; /* Allows transform */
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .reward-link:hover {
-            color: var(--accent-color);
-            transform: scale(1.05);
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+            background-color: var(--secondary-color);
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .profile-header {
                 flex-direction: column;
                 text-align: center;
-                padding: 1.5rem 0;
             }
             .profile-picture {
-                width: 150px;
-                height: 150px;
+                margin-right: 0;
                 margin-bottom: 1rem;
-            }
-            .profile-intro h1 {
-                font-size: 2rem;
-            }
-            .profile-header nav a {
-                margin: 0 8px;
-                font-size: 0.9em;
-            }
-            .profile-header nav a.personal-btn {
-                padding: 5px 10px;
-            }
-            .section {
-                padding: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 1.5rem;
             }
             .skills-grid, .certificates-grid, .services-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            .skill-card, .certificate-card, .service-card {
-                padding: 1.5rem;
-            }
-            .skill-card i, .certificate-card i, .service-card i {
-                font-size: 2.2rem;
-            }
-            .hobbies-list li {
-                padding: 1rem;
-            }
-            .hobbies-list li i {
-                font-size: 1.8rem;
-                margin-right: 10px;
-            }
-            .contact-form {
-                padding: 2rem;
-            }
-            .contact-form button {
-                padding: 12px 24px;
-                font-size: 1rem;
-            }
-            .reward-link-container {
-                margin-top: 2rem;
-                padding: 1.5rem;
-            }
-            .reward-link {
-                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="profile-header">
-        <div class="container">
-            <img src="ppfp.jpg" alt="Subhra Jyoti Mishra" class="profile-picture">
-            <div class="profile-intro">
-                <h1>Subhra Jyoti Mishra</h1>
-                <p>5th Year Integrated M.Sc. in Physics | Machine Learning Researcher | Freelance Developer</p>
-                <p>Specializing in Machine Learning and Web Development Solutions</p>
-            </div>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#publications">Publications</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#skills">Skills</a>
-                <a href="personal_page.html" class="personal-btn">Personal 😊</a>
-                <a href="#contact">Contact</a>
-            </nav>
+    <div class="profile-header container">
+        <img src="ppfp.jpg" alt="Subhra Jyoti Mishra" class="profile-picture">
+        <div class="profile-intro">
+            <h1>Subhra Jyoti Mishra</h1>
+            <p>4th Year Integrated M.Sc. in Physics | Machine Learning Researcher | Freelance Developer</p>
+            <p>Specializing in Machine Learning and Web Development Solutions</p>
         </div>
     </div>
 
-    <div class="container section" id="about">
-        <h2 class="section-title">About Me</h2>
-        <p>
-            Integrated M.Sc. Physics student at the National Institute of Science Education and Research (NISER), Bhubaneswar, specializing in <strong>Computational Astrophysics</strong> and <strong>Machine Learning applications in scientific research</strong>. My work explores the intersection of artificial intelligence and physics using data-driven methods to solve problems in planetary science, radio astronomy, and environmental modeling.
-        </p>
-        <p>
-            My research experience spans hands-on astrophysical simulations, observational data analysis, and GPT-based AI tool development. I am passionate about building accessible, low-cost, and impactful technological solutions whether in agriculture, astronomy, or science education.
-        </p>
-        <h3 style="margin-top: 2rem;">Key Research Interests</h3>
-        <ul>
-            <li><strong>Computational Astrophysics:</strong> Modeling and simulating large-scale cosmic phenomena</li>
-            <li><strong>Machine Learning Applications:</strong> Applying AI to astrophysical and real-world datasets</li>
-            <li><strong>Dataset Analysis:</strong> Preprocessing, feature extraction, and analysis of structured & unstructured data</li>
-            <li><strong>Astrophysical Simulations:</strong> N-body dynamics, planetary formation, and radiative processes</li>
-            <li><strong>GPT and AI Tools:</strong> Developing and adapting generative models for scientific and social use cases</li>
-        </ul>
-    </div>
+     <div class="container section">
+    <h2 class="section-title">About Me</h2>
+    <p>
+        Integrated M.Sc. Physics student at the National Institute of Science Education and Research (NISER), Bhubaneswar, specializing in <strong>Computational Astrophysics</strong> and <strong>Machine Learning applications in scientific research</strong>. My work explores the intersection of artificial intelligence and physics using data-driven methods to solve problems in planetary science, radio astronomy, and environmental modeling.
+    </p>
+    <p>
+        My research experience spans hands-on astrophysical simulations, observational data analysis, and GPT-based AI tool development. I am passionate about building accessible, low-cost, and impactful technological solutions whether in agriculture, astronomy, or science education.
+    </p>
 
-    <div class="container section" id="projects">
-        <h2 class="section-title">Projects & Experience</h2>
-        <div class="publication-item">
-            <h3>Project Lead – Predictive Irrigation System (Chanakya Fellowship, IIT Bombay)</h3>
-            <p>Led the development of ML-based smart irrigation systems in collaboration with Jain Irrigation. Integrated IoT sensor data and predictive analytics to optimize water usage in agriculture. The project contributed to a chapter in "Hyperautomation in Precision Agriculture".</p>
-            <p><em>2023 – 2024</em> | <a href="https://doi.org/10.1016/B978-0-443-24139-0.00022-9" target="_blank">Read Publication</a></p>
-        </div>
-        <div class="publication-item">
-            <h3>Intern – The Agnirva Space Internship Program</h3>
-            <p>Worked with space-related datasets under the mentorship of scientists and engineers. Explored AI and GPT-based tools for improving data pipelines. Recognized by AICTE.</p>
-            <p><em>2025</em></p>
-        </div>
-        <div class="publication-item">
-            <h3>Intern – IIT Indore</h3>
-            <p>Applied machine learning techniques to remote sensing and satellite datasets. Focused on enhancing satellite data reliability through automated learning models.</p>
-            <p><em>2024</em></p>
-        </div>
-        <div class="publication-item">
-            <h3>Freelance Developer & Research Consultant</h3>
-            <p>Worked with academic and industrial clients to build ML models, develop responsive web portfolios, and format technical documents using LaTeX. Specialized in creating publication-ready documents and data-driven research tools.</p>
-            <p><em>2022 – Present</em></p>
-        </div>
-        <div class="publication-item">
-            <h3>Wolfram Summer School – Science & Technology Track</h3>
-            <p>Selected for a prestigious summer school program at Bentley University, Boston. Worked on neural network and machine learning projects using Wolfram Mathematica.</p>
-            <p><em>2025</em></p>
-        </div>
-        <div class="publication-item">
-            <h3>Distinguished Speaker – Global Summit on Recycling and Waste Management</h3>
-            <p>Presented work on "IoT4Irrigation – Integrating IoT and Machine Learning for Low-Cost Sustainable Agriculture" in Berlin. Emphasized eco-friendly farming solutions for developing nations.</p>
-            <p><em>September 2025</em> | <a href="https://doi.org/10.1007/978-3-031-74701-4_24" target="_blank">Read Publication</a></p>
-            <p><em>2025</em></p>
-        </div>
-        <div class="publication-item">
-            <h3>Poster Presentation – “Exploring the Diversity in K-Nearest Neighbors”</h3>
-            <p>Presented a comprehensive comparative study of KNN variants including Adaptive, Ensemble, Fuzzy, and Hassanat KNN. Highlighted performance metrics for classification tasks in medical datasets.</p>
-            <p><a href="Poster Various types Of KNN.pdf" target="_blank">View Poster</a></p>
-        </div>
-        <div class="publication-item">
-            <h3>Poster Project – “Perfect Optical Absorption-Enhanced MOKE Microscopy”</h3>
-            <p>Demonstrated how near-100% optical absorption improves magneto-optic Kerr effect (MOKE) for real-time imaging of nanoscale magnetic domains. Enhanced sensitivity and resolution for advanced spintronics research.</p>
-            <p><a href="Unofficial_Poster_Template_for_MUNI_FI.pdf" target="_blank">View Poster</a></p>
-        </div>
-    </div>
-    
-    <div class="container section" id="publications">
+    <h3 style="margin-top: 2rem;">Key Research Interests</h3>
+    <ul>
+        <li><strong>Computational Astrophysics:</strong> Modeling and simulating large-scale cosmic phenomena</li>
+        <li><strong>Machine Learning Applications:</strong> Applying AI to astrophysical and real-world datasets</li>
+        <li><strong>Dataset Analysis:</strong> Preprocessing, feature extraction, and analysis of structured & unstructured data</li>
+        <li><strong>Astrophysical Simulations:</strong> N-body dynamics, planetary formation, and radiative processes</li>
+        <li><strong>GPT and AI Tools:</strong> Developing and adapting generative models for scientific and social use cases</li>
+    </ul>
+</div>
+
+   <div class="container section">
         <h2 class="section-title">Publications</h2>
         <div class="publications">
             <div class="publication-item">
                 <h3>Predictive irrigation: current practice and future prospects</h3>
                 <p>Integrating the Internet of Things (IoT) and machine learning (ML) technologies in predictive irrigation show immense potential for optimizing water usage in agriculture. This chapter initially highlights the significance of predictive irrigation in agricultural water management. It explores existing literature and examines current irrigation practices, revealing their limitations and the need for predictive approaches. A case study from India underscores the urgency of predictive irrigation by showcasing water scarcity challenges, inefficient water management, and their adverse effects on crop productivity. The review then delves into advancements in hardware, software, and ML algorithms for predictive irrigation, covering IoT devices, data collection, processing technologies, and the role of ML in automatically analyzing data and predicting irrigation needs. Challenges such as, data accuracy, scalability, and integration with existing infrastructure are identified, paving the way for future research directions. These include improved hardware and software solutions, enhanced ML algorithms, and robust frameworks for seamlessly integrating predictive irrigation systems into agriculture. In conclusion, this chapter enriches our understanding of predictive irrigation and offers valuable insights for future research in this dynamic field.</p>
-                <p>Read my publication on <a href="https://doi.org/10.1016/B978-0-443-24139-0.00022-9" target="_blank">ch22: Predictive irrigation: current practice and future prospects</a></p>
+                 <p>Read my publication on <a href="https://doi.org/10.1016/B978-0-443-24139-0.00022-9" target="_blank">ch22: Predictive irrigation: current practice and future prospects</a>.</p>
             </div>
             <div class="publication-item">
-                <h3>Iot4Irrigation - Integrating IoT and Machine Learning for Low-Cost Sustainable Agriculture</h3>
-                <p>Our publication, featured in the book *International Conference on Intelligent Computing and Big Data Analytics* by Springer, is titled **"IoT4Irrigation - Integrating IoT and Machine Learning for Low-Cost Sustainable Agriculture."** This work addresses the pressing need for efficient water management in agriculture through precision irrigation methods. We propose a machine learning-based predictive irrigation recommendation system designed to operate with non-sophisticated, low-cost data sources. Our approach emphasizes affordability and accessibility, particularly targeting deployment in India and other developing nations. The experimental implementation, tested successfully on *Arabidopsis thaliana*, demonstrates the system's viability and potential adaptability to average tropical crops. Moreover, we outline future prospects for advancing predictive irrigation technologies, contributing to the development of sustainable agricultural practices worldwide. </p>
-                <p>Read my publication on <a href="https://doi.org/10.1007/978-3-031-74701-4_24" target="_blank">Iot4Irrigation - Integrating IoT and Machine Learning for Low-Cost Sustainable Agriculture</a></p>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container section" id="certifications">
-        <h2 class="section-title">Certifications</h2>
-        <div class="certificates-grid">
-            
-            <div class="certificate-card">
-                <i class="fas fa-certificate"></i>
-                <h3>Chanakya Fellowship 2023</h3>
-                <p>Completed a comprehensive course on ML techniques.</p>
-                <p><a href="Chankya fellowship 2022-23 certificate.pdf" target="_blank">View Certificate</a></p>
-            </div>
+                    <h3>Iot4Irrigation - Integrating IoT and Machine Learning for Low-Cost Sustainable Agriculture</h3>
+                    <p>Our publication, featured in the book *International Conference on Intelligent Computing and Big Data Analytics* by Springer, is titled **"IoT4Irrigation - Integrating IoT and Machine Learning for Low-Cost Sustainable Agriculture."** This work addresses the pressing need for efficient water management in agriculture through precision irrigation methods. We propose a machine learning-based predictive irrigation recommendation system designed to operate with non-sophisticated, low-cost data sources. Our approach emphasizes affordability and accessibility, particularly targeting deployment in India and other developing nations. The experimental implementation, tested successfully on *Arabidopsis thaliana*, demonstrates the system's viability and potential adaptability to average tropical crops. Moreover, we outline future prospects for advancing predictive irrigation technologies, contributing to the development of sustainable agricultural practices worldwide. </p>
+                     <p>Read my publication on <a href="https://doi.org/10.1007/978-3-031-74701-4_24" target="_blank">Iot4Irrigation - Integrating IoT and Machine Learning for Low-Cost Sustainable Agriculture</a>.</p>
 
-            <div class="certificate-card">
-                <i class="fas fa-certificate"></i>
-                <h3>ICICBDA-2024</h3>
-                <p>Mastered responsive web design and front-end development.</p>
-                <p><a href="E-Certificates-41.pdf" target="_blank">View Certificate</a></p>
-            </div>
-            <div class="certificate-card">
-                <i class="fas fa-certificate"></i>
-                <h3>National Conference on Data Science Innovation in astrophysics(NCDSIA)</h3>
-                <p>Conference On data science astrophysics.</p>
-                <p><a href="ncibdia.jpg" target="_blank">View Certificate</a></p>
-            </div>
-            <div class="certificate-card">
-                <i class="fas fa-certificate"></i>
-                <h3>The Agnirva Space Internship Program</h3>
-                <p>Recognized by AICTE, aimed at nurturing young minds in the frontier fields of space science and technology.</p>
-                <p><a href="THE AGNIRVA SPACE INTERNSHIP PROGRAM (Recognized by AICTE).pdf" target="_blank">View Certificate</a></p>
             </div>
         </div>
     </div>
-    
-    <div class="container section" id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Programming Languages</h3>
-                <p>Python, HTML, CSS, JavaScript, LaTeX</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-robot"></i>
-                <h3>Artificial Intelligence</h3>
-                <p>AI model development, GPT-based applications, generative AI tools</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-brain"></i>
-                <h3>Machine Learning</h3>
-                <p>Supervised & Unsupervised Learning, Model Evaluation, Transfer Learning</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-chart-bar"></i>
-                <h3>Data Science</h3>
-                <p>Statistical Analysis, Data Visualization, Feature Engineering</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-atom"></i>
-                <h3>Scientific Computing</h3>
-                <p>Computational Physics, Numerical Methods, Simulation Frameworks</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Web Development</h3>
-                <p>Responsive Design, Frontend Development, Research Portfolio Websites</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Removed 'personal' section from index.html -->
+  
 
-    <div class="container section contact-form" id="contact">
+    <div class="container section">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certificates-grid">
+        <div class="certificate-card">
+            <i class="fas fa-certificate"></i>
+            <h3>Chanakya Fellowship 2023</h3>
+            <p>Completed a comprehensive course on ML techniques.</p>
+            <p><a href="Chankya fellowship 2022-23 certificate.pdf" target="_blank">View Certificate</a></p>
+        </div>
+        <div class="certificate-card">
+            <i class="fas fa-certificate"></i>
+            <h3>ICICBDA-2024</h3>
+            <p>Mastered responsive web design and front-end development.</p>
+            <p><a href="E-Certificates-41.pdf" target="_blank">View Certificate</a></p>
+        </div>
+              <div class="certificate-card">
+            <i class="fas fa-certificate"></i>
+            <h3>National Conference on Data Science Innovation in astrophysics(NCDSIA)</h3>
+            <p>Conference On data science astrophysics.</p>
+            <p><a href="ncibdia.jpg" target="_blank">View Certificate</a></p>
+        </div>
+        <div class="certificate-card">
+            <i class="fas fa-certificate"></i>
+            <h3>The Agnirva Space Internship Program</h3>
+            <p> Recognized by AICTE, aimed at nurturing young minds in the frontier fields of space science and technology.</p>
+            <p><a href="THE AGNIRVA SPACE INTERNSHIP PROGRAM (Recognized by AICTE).pdf" target="_blank">View Certificate</a></p>
+       </div>
+    </div>
+</div>
+
+
+ 
+
+   <div class="container section">
+    <h2 class="section-title">Projects & Experience</h2>
+
+    <div class="publication-item">
+        <h3>Project Lead – Predictive Irrigation System (Chanakya Fellowship, IIT Bombay)</h3>
+        <p>Led the development of ML-based smart irrigation systems in collaboration with Jain Irrigation. Integrated IoT sensor data and predictive analytics to optimize water usage in agriculture. The project contributed to a chapter in "Hyperautomation in Precision Agriculture".</p>
+        <p><em>2023 – 2024</em> | <a href="https://doi.org/10.1016/B978-0-443-24139-0.00022-9" target="_blank">Read Publication</a></p>
+    </div>
+
+    <div class="publication-item">
+        <h3>Intern – The Agnirva Space Internship Program</h3>
+        <p>Worked with space-related datasets under the mentorship of scientists and engineers. Explored AI and GPT-based tools for improving data pipelines. Recognized by AICTE.</p>
+        <p><em>2025</em></p>
+    </div>
+
+    <div class="publication-item">
+        <h3>Intern – IIT Indore</h3>
+        <p>Applied machine learning techniques to remote sensing and satellite datasets. Focused on enhancing satellite data reliability through automated learning models.</p>
+        <p><em>2024</em></p>
+    </div>
+
+    <div class="publication-item">
+        <h3>Freelance Developer & Research Consultant</h3>
+        <p>Worked with academic and industrial clients to build ML models, develop responsive web portfolios, and format technical documents using LaTeX. Specialized in creating publication-ready documents and data-driven research tools.</p>
+        <p><em>2022 – Present</em></p>
+    </div>
+
+    <div class="publication-item">
+        <h3>Wolfram Summer School – Science & Technology Track</h3>
+        <p>Selected for a prestigious summer school program at Bentley University, Boston. Worked on neural network and machine learning projects using Wolfram Mathematica.</p>
+        <p><em>2025</em></p>
+    </div>
+
+    <div class="publication-item">
+        <h3>Distinguished Speaker – Global Summit on Recycling and Waste Management</h3>
+        <p>Presented work on "IoT4Irrigation – Integrating IoT and Machine Learning for Low-Cost Sustainable Agriculture" in Berlin. Emphasized eco-friendly farming solutions for developing nations.</p>
+        <p><em>September 2025</em> | <a href="https://doi.org/10.1007/978-3-031-74701-4_24" target="_blank">Read Publication</a></p>
+	<p><em>2025</em></p>
+    </div>
+
+
+     <div class="publication-item">
+        <h3>Poster Presentation – “Exploring the Diversity in K-Nearest Neighbors”</h3>
+        <p>Presented a comprehensive comparative study of KNN variants including Adaptive, Ensemble, Fuzzy, and Hassanat KNN. Highlighted performance metrics for classification tasks in medical datasets.</p>
+        <p><a href="Poster Various types Of KNN.pdf" target="_blank">View Poster</a></p>
+    </div>
+
+    <div class="publication-item">
+        <h3>Poster Project – “Perfect Optical Absorption-Enhanced MOKE Microscopy”</h3>
+        <p>Demonstrated how near-100% optical absorption improves magneto-optic Kerr effect (MOKE) for real-time imaging of nanoscale magnetic domains. Enhanced sensitivity and resolution for advanced spintronics research.</p>
+        <p><a href="Unofficial_Poster_Template_for_MUNI_FI.pdf" target="_blank">View Poster</a></p>
+    </div>
+    </div>
+</div>
+ <div class="container section">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <i class="fas fa-code"></i>
+            <h3>Programming Languages</h3>
+            <p>Python, HTML, CSS, JavaScript, LaTeX</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fas fa-robot"></i>
+            <h3>Artificial Intelligence</h3>
+            <p>AI model development, GPT-based applications, generative AI tools</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fas fa-brain"></i>
+            <h3>Machine Learning</h3>
+            <p>Supervised & Unsupervised Learning, Model Evaluation, Transfer Learning</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Data Science</h3>
+            <p>Statistical Analysis, Data Visualization, Feature Engineering</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fas fa-atom"></i>
+            <h3>Scientific Computing</h3>
+            <p>Computational Physics, Numerical Methods, Simulation Frameworks</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Web Development</h3>
+            <p>Responsive Design, Frontend Development, Research Portfolio Websites</p>
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+    </div>
+
+    <div class="container section contact-form">
         <h2 class="section-title">Contact Me</h2>
         <form>
             <input type="text" placeholder="Your Name" required>
@@ -626,12 +335,5 @@
             <button type="submit">Send Inquiry</button>
         </form>
     </div>
-    
-    <div class="reward-link-container">
-        <p><a href="reward.html" class="reward-link">Thanks for giving me your time. Here is a reward for you.</a></p>
-    </div>
-
-    </body>
+</body>
 </html>
-
-
